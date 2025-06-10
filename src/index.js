@@ -1,13 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TelaTarefas from './componentes/TelaTarefas';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import TelaTarefaDetalhes from './componentes/TelaTarefaDetalhes';
+import TelaLogin from './componentes/TelaLogin';
+import RotaPrivada from './rotas/RotaPrivada';
+import TelaCadUsuario from './componentes/TelaCadUsuario';
+import AppLayout from './componentes/AppLayout';
+
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout/>,
+      children:[
+        {
+          index: true,
+          element: <TelaLogin />
+        },
+        {
+          path: "/cadUsuario",
+          element: <TelaCadUsuario />
+        },
+        {
+          path: "/tarefas",
+          element: (
+            <RotaPrivada>
+              <TelaTarefas/>
+            </RotaPrivada>
+          )
+        },
+        {
+          path: "/tarefaDetalhes",
+          element: <TelaTarefaDetalhes/>
+        }
+      ]
+    }
+  ]
+)
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+        <RouterProvider router={router} />
   </React.StrictMode>
 );
 
