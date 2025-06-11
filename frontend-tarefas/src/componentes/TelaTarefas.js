@@ -3,11 +3,11 @@ import "./Tarefa.css"
 import FormCadTarefa from "./FormCadTarefa";
 import { AiOutlinePlus } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
-import useTarefa_Mysql from "../hooks/useTarefa_Mysql";
+import useTarefa_BDSQL from "../hooks/useTarefa_BDSQL";
 
 const TelaTarefas = () => {
 
-    const {listaTarefas, adicionar_tarefa, excluir_tarefa, exibir_detalhes_tarefa, usuario} = useTarefa_Mysql()
+    const {listaTarefas, adicionar_tarefa, excluir_tarefa, exibir_detalhes_tarefa, usuario} = useTarefa_BDSQL()
 
     return(
         <>

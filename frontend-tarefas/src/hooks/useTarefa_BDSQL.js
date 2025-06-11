@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";  
 
-const useTarefa_Mysql = () => {
+const useTarefa_BDSQL = () => {
   const [id, setId] = useState(null);
   const [titulo, setTitulo] = useState("");
   const [finalizada, setFinalizada] = useState(false);
@@ -117,4 +117,4 @@ const useTarefa_Mysql = () => {
 
 }
 
-export default useTarefa_Mysql;
+export default useTarefa_BDSQL;

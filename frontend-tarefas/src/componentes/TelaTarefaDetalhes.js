@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate} from "react-router-dom";
 import "./Tarefa.css"
-import useTarefa_Mysql from "../hooks/useTarefa_Mysql";
+import useTarefa_BDSQL from "../hooks/useTarefa_BDSQL";
 
 
 const TelaTarefaDetalhes = () => {
@@ -21,7 +21,7 @@ const TelaTarefaDetalhes = () => {
     
     const [radio_finalizada, setRadio_Finalizada] = useState(tarefa.finalizada);
 
-    const {alterar_tarefa} = useTarefa_Mysql()
+    const {alterar_tarefa} = useTarefa_BDSQL()
 
     const handle_buttonClick_alterar = async() => {
         const tarefa_editada = {...tarefa, titulo: input_tituloTarefa, finalizada: radio_finalizada}
@@ -52,10 +52,10 @@ const TelaTarefaDetalhes = () => {
                     name="finalizada"
                     type="radio"
                     aria-label="finalizada sim"
-                    value={1}
-                    checked={radio_finalizada === 1}
-                    //value={true}
-                    //checked={radio_finalizada === true}
+                    //value={1}
+                    //checked={radio_finalizada === 1}
+                    value={true}
+                    checked={radio_finalizada === true}
                     onChange={(campo)=>{
                         setRadio_Finalizada(JSON.parse(campo.target.value))
                     }}
@@ -68,10 +68,10 @@ const TelaTarefaDetalhes = () => {
                     type="radio"
                     name="finalizada"
                     aria-label="finalizada não"
-                    value={0}
-                    checked={radio_finalizada === 0}
-                    //value={false}
-                    //checked={radio_finalizada === false}
+                    //value={0}
+                    //checked={radio_finalizada === 0}
+                    value={false}
+                    checked={radio_finalizada === false}
                     onChange={(campo)=>{
                         setRadio_Finalizada(JSON.parse(campo.target.value))
                     }}
