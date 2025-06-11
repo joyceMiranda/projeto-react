@@ -23,7 +23,9 @@ const connection = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  ssl:false
+ ssl: {
+    rejectUnauthorized: false          // Permite conectar sem validar CA (não recomendado para produção)
+  }
 });
 
 export default connection;
