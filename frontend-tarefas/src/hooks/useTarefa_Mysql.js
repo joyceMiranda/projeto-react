@@ -52,7 +52,7 @@ const useTarefa_Mysql = () => {
 
       await api.post("/tarefas", novaTarefa);
 
-      buscar_tarefas()
+      await buscar_tarefas()
       
       alert("Tarefa adicionada com sucesso!")
 
@@ -69,7 +69,7 @@ const useTarefa_Mysql = () => {
 
       await api.delete("/tarefas/"+id)
 
-      buscar_tarefas()
+      await buscar_tarefas()
 
       alert("Tarefa excluída com sucesso!")
 
@@ -94,14 +94,14 @@ const useTarefa_Mysql = () => {
 
       await api.put("/tarefas/"+tarefa_editada.id, tarefa_editada)
       
-      buscar_tarefas()
+      await buscar_tarefas()
 
       alert("Tarefa alterada com sucesso!")
 
     } catch (error) {
       alert("Erro ao alterar tarefa:" + error);
     }
-  };
+  }
 
   return {
     id, setId,
