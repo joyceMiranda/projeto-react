@@ -23,9 +23,9 @@ const TelaTarefaDetalhes = () => {
 
     const {alterar_tarefa} = useTarefa_Mysql()
 
-    const handle_buttonClick_alterar = () => {
+    const handle_buttonClick_alterar = async() => {
         const tarefa_editada = {...tarefa, titulo: input_tituloTarefa, finalizada: radio_finalizada}
-        alterar_tarefa(tarefa_editada)
+        await alterar_tarefa(tarefa_editada)
         navigate("/tarefas")
       }
 
