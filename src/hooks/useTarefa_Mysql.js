@@ -17,7 +17,8 @@ const useTarefa_Mysql = () => {
 
   //definição fixa da URL do servidor
   const api = axios.create({
-    baseURL: "http://localhost:3001" 
+    //baseURL: "http://localhost:3001" 
+    baseURL: process.env.REACT_APP_API_URL+":"+process.env.REACT_APP_API_PORT 
   });
 
 
