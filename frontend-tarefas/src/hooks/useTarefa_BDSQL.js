@@ -2,11 +2,6 @@ import { getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";  
-import { configDotenv } from "dotenv";
-
-
-  // Carrega variáveis do .env
-  configDotenv()
 
 const useTarefa_BDSQL = () => {
   const [id, setId] = useState(null);
@@ -24,7 +19,7 @@ const useTarefa_BDSQL = () => {
   //definição fixa da URL do servidor
   const api = axios.create({
     //baseURL: "http://localhost:3001" 
-    baseURL: process.env.BACKEND_API_URL 
+    baseURL: process.env.REACT_APP_BACKEND_API_URL 
   });
 
 

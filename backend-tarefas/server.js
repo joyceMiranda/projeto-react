@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import connection from './db.js';
+import connection from './db-mysql';
+
 
 const app = express();
 const porta = 3001;
