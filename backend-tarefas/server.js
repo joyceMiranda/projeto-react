@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import connection from './db-mysql';
+import connection from './db';
 
 
 const app = express();
